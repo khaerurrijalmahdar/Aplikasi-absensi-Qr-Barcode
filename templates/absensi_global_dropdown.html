@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Absensi Guru</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        margin: 0;
+        background-color: #f0f4f7;
+        text-align: center;
+    }
+    h2 {
+        color: #333;
+        margin-bottom: 20px;
+    }
+    select, button {
+        width: 80%;
+        max-width: 300px;
+        padding: 12px;
+        margin: 10px 0;
+        font-size: 16px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+    }
+    button {
+        background-color: #28a745;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #1e7e34;
+    }
+    p.msg {
+        font-size: 16px;
+        color: #007bff;
+        margin-top: 15px;
+    }
+</style>
+</head>
+<body>
+    <h2>Absensi Guru</h2>
+    {% if msg %}
+        <p class="msg">{{ msg }}</p>
+    {% endif %}
+    <form method="POST">
+        <select name="guru_id" required>
+            <option value="">-- Pilih Guru --</option>
+            {% for id, nama in guru_list %}
+                <option value="{{ id }}">{{ nama }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <button type="submit">Absen</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Guru Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container py-3 text-center">
+    <h4>Halo, {{ guru[1] }} (NIP: {{ guru[2] }})</h4>
+    <p>Scan QR berikut untuk absensi:</p>
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data={{ request.host_url }}absensi/{{ guru[0] }}" class="border p-2">
+  </div>
+</body>
+</html>

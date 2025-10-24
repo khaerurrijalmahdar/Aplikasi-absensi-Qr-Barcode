@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Scan Barcode</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        input, button { padding: 10px; margin-top: 10px; }
+        .msg { margin-top: 20px; font-size: 18px; }
+        .success { color: green; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h1>Scan Barcode Guru</h1>
+    <form method="POST">
+        <label>Masukkan ID Guru (hasil scan):</label><br><br>
+        <input type="text" name="guru_id" autofocus required>
+        <button type="submit">Absen</button>
+    </form>
+
+    {% if success %}
+        <p class="msg success">✅ Absensi berhasil! <br>
+        Guru: <b>{{ guru[1] }}</b> <br>
+        Waktu: {{ waktu }}</p>
+    {% elif error %}
+        <p class="msg error">❌ ID Guru tidak ditemukan!</p>
+    {% endif %}
+
+    <br>
+    <a href="{{ url_for('index') }}">⬅ Kembali ke Halaman Utama</a>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Barcode Guru</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 20px; }
+        .guru { display: inline-block; margin: 20px; padding: 15px; border: 1px solid #ddd; border-radius: 10px; }
+        img { width: 150px; height: 150px; }
+        a { display: inline-block; margin-top: 20px; text-decoration: none; padding: 10px 20px; background: #0d6efd; color: white; border-radius: 5px; }
+        a:hover { background: #084298; }
+    </style>
+</head>
+<body>
+    <h1>Daftar Barcode Guru</h1>
+    <p>Guru tinggal scan barcode di bawah ini untuk absensi.</p>
+    {% for g in gurus %}
+    <div class="guru">
+        <h3>{{ g[1] }}</h3>
+        <img src="{{ url_for('static', filename='qrcode/' + g[0] + '.png') }}" alt="barcode">
+        <p>ID: {{ g[0] }}</p>
+    </div>
+    {% endfor %}
+    <br>
+    <a href="{{ url_for('scan') }}">👉 Halaman Scan Barcode</a>
+    <a href="{{ url_for('rekap') }}">📊 Lihat Rekap Absensi</a>
+</body>
+</html>

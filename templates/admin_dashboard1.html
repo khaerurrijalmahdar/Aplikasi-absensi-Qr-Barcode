@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Admin</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f4f7;
+        margin: 0;
+        padding: 20px;
+    }
+    h2, h3 {
+        color: #333;
+        text-align: center;
+    }
+    .nav-links {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .nav-links a {
+        text-decoration: none;
+        padding: 10px 20px;
+        margin: 5px;
+        background-color: #007bff;
+        color: white;
+        border-radius: 6px;
+        font-size: 16px;
+    }
+    .nav-links a:hover {
+        background-color: #0056b3;
+    }
+    table {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        border-collapse: collapse;
+        background-color: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    th, td {
+        padding: 12px 15px;
+        border-bottom: 1px solid #ddd;
+        text-align: left;
+    }
+    th {
+        background-color: #007bff;
+        color: white;
+    }
+    tr:hover {
+        background-color: #f1f1f1;
+    }
+    @media (max-width: 500px) {
+        th, td {
+            font-size: 14px;
+            padding: 10px;
+        }
+        .nav-links a {
+            padding: 8px 12px;
+            font-size: 14px;
+        }
+    }
+</style>
+</head>
+<body>
+
+    <h2>Admin Dashboard</h2>
+    
+    <div class="nav-links">
+        <a href="{{ url_for('tambah_guru') }}">Tambah Guru</a>
+        <a href="{{ url_for('rekap_absensi') }}">Rekap Absensi</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+
+    <h3>Daftar Guru</h3>
+    <table>
+        <tr>
+            <th>Nama</th>
+            <th>NIP</th>
+        </tr>
+        {% for id, nama, nip in data %}
+        <tr>
+            <td>{{ nama }}</td>
+            <td>{{ nip }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>

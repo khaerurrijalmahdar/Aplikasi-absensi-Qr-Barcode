@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Absensi</title>
+</head>
+<body>
+    <h1>📝 Pilih User untuk Absensi</h1>
+    <form action="/absen" method="post">
+        <label>Pilih User:</label>
+        <select name="user_id">
+            {% for user in users %}
+                <option value="{{ user[0] }}">{{ user[1] }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Absen</button>
+    </form>
+</body>
+</html>
