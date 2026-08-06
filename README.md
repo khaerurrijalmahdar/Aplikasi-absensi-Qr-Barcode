@@ -11,9 +11,3 @@ Aplikasi absensi berbasis web dengan fitur scan QR Code yang cepat dan dilengkap
 - Responsif di desktop dan mobile
 - Mudah dikembangkan dan di-deploy
 - Open source dan gratis
-
-## 🚀 Demo
-
-Coba langsung di: [https://username.github.io/Aplikasi-absensi-Qr-Barcode](https://username.github.io/Aplikasi-absensi-Qr-Barcode)
-
-## 📁 Struktur Folder
